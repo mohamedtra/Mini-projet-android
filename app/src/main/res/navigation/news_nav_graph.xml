@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/news_nav_graph"
+    app:startDestination="@id/listArticleFragment">
+
+    <fragment
+        android:id="@+id/listArticleFragment"
+        android:name="com.mbds.mvc.newsletter.fragments.views.NewsFragment"
+        android:label="fragment_article_list"
+        tools:layout="@layout/fragment_view_news" >
+        <action
+            android:id="@+id/action_listArticleFragment_to_articleFragment"
+            app:destination="@id/articleFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/favorisFragment"
+        android:name="com.mbds.mvc.newsletter.fragments.views.FavoritesFragment"
+        android:label="FavorisFragment" >
+        <action
+            android:id="@+id/action_favorisFragment_to_articleFragment2"
+            app:destination="@id/articleFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.mbds.mvc.newsletter.fragments.views.AboutFragment"
+        android:label="AboutFragment" >
+        <action
+            android:id="@+id/action_aboutFragment_self"
+            app:destination="@id/aboutFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/articleFragment"
+        android:name="com.mbds.mvc.newsletter.fragments.views.NewsFragment"
+        android:label="fragment_article"
+        tools:layout="@layout/fragment_article" />
+</navigation>
